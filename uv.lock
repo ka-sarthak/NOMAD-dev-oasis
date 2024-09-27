@@ -3760,7 +3760,7 @@ wheels = [
 
 [[package]]
 name = "nomad-lab"
-version = "1.3.7"
+version = "1.3.8.dev6+g21edbc220"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "aniso8601" },
@@ -3802,7 +3802,7 @@ dependencies = [
     { name = "wrapt" },
     { name = "xarray" },
 ]
-sdist = { url = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/files/d091db52510e18f3a71f266031414c9eceb1f981a27a80e219d896767de72566/nomad-lab-1.3.7.tar.gz", hash = "sha256:d091db52510e18f3a71f266031414c9eceb1f981a27a80e219d896767de72566" }
+sdist = { url = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/files/1e199974c9a1c24d32364edffbdb5347de80e6b38149240013bcab14bcd18748/nomad-lab-1.3.8.dev6+g21edbc220.tar.gz", hash = "sha256:1e199974c9a1c24d32364edffbdb5347de80e6b38149240013bcab14bcd18748" }
 
 [package.optional-dependencies]
 dev = [
@@ -3861,7 +3861,6 @@ infrastructure = [
     { name = "oauthenticator" },
     { name = "optimade", extra = ["mongo"] },
     { name = "pyjwt", extra = ["crypto"] },
-    { name = "pymongo" },
     { name = "python-json-logger" },
     { name = "python-logstash" },
     { name = "python-multipart" },
