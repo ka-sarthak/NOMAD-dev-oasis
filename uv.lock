@@ -3677,7 +3677,7 @@ source = { git = "https://github.com/FAIRmat-NFDI/nomad-aitoolkit.git?rev=b203f8
 [[package]]
 name = "nomad-analysis"
 version = "0.0.0"
-source = { git = "https://github.com/FAIRmat-NFDI/nomad-analysis.git?rev=fdee653221fa7a30d382ca6da5d68a4d6e45810e#fdee653221fa7a30d382ca6da5d68a4d6e45810e" }
+source = { git = "https://github.com/FAIRmat-NFDI/nomad-analysis.git?rev=38eb21ebe78703b7c9f8ed7a309c18d8e1ef8f67#38eb21ebe78703b7c9f8ed7a309c18d8e1ef8f67" }
 dependencies = [
     { name = "nbformat" },
     { name = "nomad-lab" },
@@ -3723,7 +3723,7 @@ plugins = [
 requires-dist = [
     { name = "eelsdbconverter", marker = "extra == 'plugins'", git = "https://github.com/nomad-coe/nomad-parser-eelsdb.git?rev=entry-point" },
     { name = "nomad-aitoolkit", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-aitoolkit.git?rev=b203f8eb28dc4b6771a39d5c5b7ad3d9d8583ac8#b203f8eb28dc4b6771a39d5c5b7ad3d9d8583ac8" },
-    { name = "nomad-analysis", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-analysis.git?rev=fdee653221fa7a30d382ca6da5d68a4d6e45810e#fdee653221fa7a30d382ca6da5d68a4d6e45810e" },
+    { name = "nomad-analysis", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-analysis.git?rev=38eb21ebe78703b7c9f8ed7a309c18d8e1ef8f67#38eb21ebe78703b7c9f8ed7a309c18d8e1ef8f67" },
     { name = "nomad-lab", extras = ["parsing", "infrastructure"], specifier = ">=1.3.4" },
     { name = "nomad-lab", extras = ["parsing", "infrastructure", "dev"], marker = "extra == 'dev'", specifier = ">=1.3.4" },
     { name = "nomad-material-processing", marker = "extra == 'plugins'" },
@@ -3760,7 +3760,7 @@ wheels = [
 
 [[package]]
 name = "nomad-lab"
-version = "1.3.8.dev6+g21edbc220"
+version = "1.3.8.dev8+g49e9135bd"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "aniso8601" },
@@ -3802,7 +3802,7 @@ dependencies = [
     { name = "wrapt" },
     { name = "xarray" },
 ]
-sdist = { url = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/files/1e199974c9a1c24d32364edffbdb5347de80e6b38149240013bcab14bcd18748/nomad-lab-1.3.8.dev6+g21edbc220.tar.gz", hash = "sha256:1e199974c9a1c24d32364edffbdb5347de80e6b38149240013bcab14bcd18748" }
+sdist = { url = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/files/454b8f87d019979c80ed155df134a70543bd06de1185ee953dbb96e78008b1ca/nomad-lab-1.3.8.dev8+g49e9135bd.tar.gz", hash = "sha256:454b8f87d019979c80ed155df134a70543bd06de1185ee953dbb96e78008b1ca" }
 
 [package.optional-dependencies]
 dev = [
