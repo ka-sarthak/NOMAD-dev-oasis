@@ -28,3 +28,6 @@ mongo:
 elastic:
   entries_index: nomad_oasis_entries_v1
   materials_index: nomad_oasis_materials_v1
+
+nomad:
+  api_host: http://nomad_oasis_proxy
