@@ -41,7 +41,8 @@ plugins = [
   "nomad-parser-plugins-database>=1.0",
   "nomad-measurements",
   "nomad-material-processing",
-  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@6a458c3b6f4ee2ac615a6aab711c4aa866375536"
+  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@6a458c3b6f4ee2ac615a6aab711c4aa866375536",
+  "bayesian-optimization-hpt @ git+https://github.com/ka-sarthak/bayesian-optimization-plugin.git@main"
 ]
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.4"]
 
