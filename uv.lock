@@ -304,7 +304,7 @@ wheels = [
 [[package]]
 name = "bayesian-optimization-hpt"
 version = "0.1.0"
-source = { git = "https://github.com/ka-sarthak/bayesian-optimization-plugin.git?rev=232f408e0d33bc6091f09d8a6a263d9d8877aeb8#232f408e0d33bc6091f09d8a6a263d9d8877aeb8" }
+source = { git = "https://github.com/ka-sarthak/bayesian-optimization-plugin.git?rev=6681203186e25b2088cbdcc65501a076394bce46#6681203186e25b2088cbdcc65501a076394bce46" }
 dependencies = [
     { name = "nomad-analysis" },
     { name = "nomad-lab" },
@@ -3618,15 +3618,15 @@ source = { git = "https://github.com/FAIRmat-NFDI/nomad-aitoolkit.git?rev=b203f8
 
 [[package]]
 name = "nomad-analysis"
-version = "0.0.2"
+version = "0.0.4"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "nbformat" },
     { name = "nomad-lab" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f6/3e/addcd1a85ffdbd54adae8b5f00220d9ec4dcc1fd7b91a8b17e56f2bcff70/nomad_analysis-0.0.2.tar.gz", hash = "sha256:076045a596ee84aab325f38bd39fc4b416ac9b3a07c5ee6aab57aac1a421608d", size = 125190 }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/ed/10e436eb3ee2ea02c9629fa2f23be77f030852ba497090d923693e2eb214/nomad_analysis-0.0.4.tar.gz", hash = "sha256:4d603017b1615c4bbb86b33ecec0484f891b80b05eba971167dc13f69437034b", size = 124900 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5b/ac/fa2beb452f2c195a67a7e128ca5397d36766785efbe2346961291dbd680d/nomad_analysis-0.0.2-py3-none-any.whl", hash = "sha256:e397fa06aeb0b447baae09f9b9623fb256ab5a33e8c51fb22a4c92d7a4413fe7", size = 26330 },
+    { url = "https://files.pythonhosted.org/packages/83/54/fe1ecf2490f71ac3d5f955982506c2cc6946761808b0ffdd533a3156a64a/nomad_analysis-0.0.4-py3-none-any.whl", hash = "sha256:9bbd1d9ca3a703d0c74ef18bc2d7e0461751e6dbd37586cbc3981f4c5da02135", size = 26338 },
 ]
 
 [[package]]
@@ -3668,7 +3668,7 @@ plugins = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bayesian-optimization-hpt", marker = "extra == 'plugins'", git = "https://github.com/ka-sarthak/bayesian-optimization-plugin.git?rev=232f408e0d33bc6091f09d8a6a263d9d8877aeb8#232f408e0d33bc6091f09d8a6a263d9d8877aeb8" },
+    { name = "bayesian-optimization-hpt", marker = "extra == 'plugins'", git = "https://github.com/ka-sarthak/bayesian-optimization-plugin.git?rev=6681203186e25b2088cbdcc65501a076394bce46#6681203186e25b2088cbdcc65501a076394bce46" },
     { name = "eelsdbconverter", marker = "extra == 'plugins'", git = "https://github.com/nomad-coe/nomad-parser-eelsdb.git?rev=entry-point" },
     { name = "nomad-aitoolkit", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-aitoolkit.git?rev=b203f8eb28dc4b6771a39d5c5b7ad3d9d8583ac8#b203f8eb28dc4b6771a39d5c5b7ad3d9d8583ac8" },
     { name = "nomad-analysis", marker = "extra == 'plugins'" },
