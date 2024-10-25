@@ -42,7 +42,7 @@ plugins = [
   "nomad-measurements",
   "nomad-material-processing",
   "nomad-analysis==0.0.5",
-  "bayesian-optimization-hpt @ git+https://github.com/ka-sarthak/bayesian-optimization-plugin.git@b4967b0df8bd7b955dafe5b4297866bd034159ee"
+  "bayesian-optimization-hpt @ git+https://github.com/ka-sarthak/bayesian-optimization-plugin.git@6d3b9674759f716ce1c051bcc492883d1af66be8"
 ]
 jupyter = []
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.4"]
