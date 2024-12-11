@@ -12,7 +12,18 @@ north:
     options:
       jupyter:
         image: ghcr.io/ka-sarthak/nomad-dev-oasis/jupyter:main
-
+      voila:
+        short_description: A jupyter webapp container with voila
+        description: A jupyter hub webapp container with voila installed.
+        image: ghcr.io/ka-sarthak/nomad-dev-oasis/jupyter:main
+        path_prefix: voila/render
+        with_path: true
+        mount_path: /home/jovyan
+        file_extensions:
+          - ipynb
+        maintainer:
+          - name: Sarthak Kapoor
+            email: sarthak.kapoor@physik.hu-berlin.de
 meta:
   deployment: "oasis"
   deployment_url: "https://my-oasis.org/api"
@@ -27,3 +38,51 @@ mongo:
 elastic:
   entries_index: nomad_oasis_entries_v1
   materials_index: nomad_oasis_materials_v1
+
+plugins:
+  # We only include our schema here. Without the explicit include, all plugins will be
+  # loaded. Many build in plugins require more dependencies. Install nomad-lab[parsing]
+  # to make all default plugins work.
+  include:
+    - "nomad_material_processing:schema"
+    - "nomad_material_processing.solution:schema"
+    - "nomad_material_processing.vapor_deposition.cvd:schema"
+    - "nomad_material_processing.vapor_deposition.pvd:schema"
+    - "nomad_material_processing.vapor_deposition.pvd:mbe_schema"
+    - "nomad_material_processing.vapor_deposition.pvd:pld_schema"
+    - "nomad_material_processing.vapor_deposition.pvd:sputtering_schema"
+    - "nomad_material_processing.vapor_deposition.pvd:thermal_schema"
+    - "nomad_measurements.general:schema"
+    - "nomad_measurements.xrd:parser"
+    - "nomad_analysis.general:schema"
+    - "nomad_analysis.jupyter:schema"
+    # - "nomad_ikz_plugin.general:schema"
+    # - "nomad_ikz_plugin.characterization:schema"
+    # - "nomad_ikz_plugin.characterization:transmission_parser"
+    # - "transmission:schema"
+    # - "nomad_ikz_plugin.pld:schema"
+    # - "nomad_ikz_plugin.movpe:schema"
+    # - "nomad_ikz_plugin.movpe.movpe2.growth_excel:parser"
+    # - "nomad_ikz_plugin.movpe.movpe1.growth_excel:parser"
+    # - "nomad_ikz_plugin.movpe.substrate:parser"
+    # - "nomad_ikz_plugin.mbe:schema"
+    # - "nomad_ikz_plugin.directional_solidification:schema"
+    # - "nomad_ikz_plugin.directional_solidification:excel_parser"
+    # - "nomad_ikz_plugin.czochralski:schema"
+    # - "nomad_ikz_plugin.czochralski:parser"
+    # - 'nomad_ikz_raman.parsers:ramanparser'
+    # - 'nomad_ikz_raman.schema_packages:raman'
+    # - 'nomad_ikz_fz.schema_packages:mypackage'
+    # - 'nomad_ikz_omega_theta_xrd.schema_packages:omegascan'
+    # - 'nomad_ikz_omega_theta_xrd.parsers:omegathetaxrdparser'
+    # - "lakeshore_nomad_plugin.hall:hall_schema"
+    # - "lakeshore_nomad_plugin.hall.instrument_parser:hall_instrument_parser"
+    # - "lakeshore_nomad_plugin.hall.measurement_parser:hall_measurement_parser"
+    # - 'laytec_epitt_plugin:laytec_schema' 
+    # - 'laytec_epitt_plugin:laytec_parser'
+    # - 'rtg_sims:schema'
+    # - 'rtg_sims:parser'
+    # - 'schemas/RTGSIMS'
+
+  exclude:
+    - 'parsers/nexus'
