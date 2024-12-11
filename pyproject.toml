@@ -23,7 +23,7 @@ dependencies = ["nomad-lab[parsing, infrastructure]>=1.3.4"]
 plugins = [
   "nomad-measurements",
   "nomad-material-processing",
-  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@c5452a6c43545d942f8898cc8f8f3eec7e440a61",
+  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@develop",
   # "bayesian-optimization-hpt @ git+https://github.com/ka-sarthak/bayesian-optimization-plugin.git@b4967b0df8bd7b955dafe5b4297866bd034159ee",
   # "nomad-ikz-plugin @git+https://github.com/IKZ-Berlin/nomad-ikz-plugin.git@a68ee7fe9f4ab1921a2d4ef8e3915ab8def1a4e4",
 ]
