@@ -7,7 +7,7 @@ This is the NOMAD Oasis distribution of ka-sarthak.
 
 # NOMAD Oasis Distribution *Template*
 This repository is a template for creating your own custom NOMAD Oasis distribution image.
-Click [here](https://github.com/new?template_name=nomad-distribution-template&template_owner=FAIRmat-NFDI)
+Click [here](https://github.com/new?template_name=nomad-distro-template&template_owner=FAIRmat-NFDI)
 to use this template, or click the `Use this template` button in the upper right corner of
 the main GitHub page for this template.
 
@@ -27,8 +27,10 @@ In this README you will find instructions for:
 1. [Deploying the distribution](#deploying-the-distribution)
 2. [Adding a plugin](#adding-a-plugin)
 3. [Using the jupyter image](#the-jupyter-image)
-4. [Updating the distribution from the template](#updating-the-distribution-from-the-template)
-5. [Solving common issues](#faqtrouble-shooting)
+4. [Automated unit and example upload tests in CI](#automated-unit-and-example-upload-tests-in-ci)
+5. [Setup regular package updates with Dependabot](#set-up-regular-package-updates-with-dependabot)
+6. [Updating the distribution from the template](#updating-the-distribution-from-the-template)
+7. [Solving common issues](#faqtrouble-shooting)
 
 ## Deploying the distribution
 
@@ -84,13 +86,20 @@ Below are instructions for how to deploy this NOMAD Oasis distribution
 
 7. Finally, open [http://localhost/nomad-oasis](http://localhost/nomad-oasis) in your browser to start using your new NOMAD Oasis.
 
-    Whenever you update your image you need to shut down NOMAD using
+#### Updating the image
+1. Whenever you update your image you need to shut down NOMAD using
 
     ```sh
     docker compose down
     ```
 
     and then repeat steps 4. and 5. above.
+   
+2. You can remove unused images to free up space by running
+
+    ```sh
+    docker image prune -a
+    ```
 
 #### NOMAD Remote Tools Hub (NORTH)
 
@@ -173,7 +182,7 @@ This image has been added to the [`configs/nomad.yaml`](configs/nomad.yaml) duri
 The image is quite large and might cause a timeout the first time it is run. In order to avoid this you can pre pull the image with:
 
 ```
-docker pull ghcr.io/fairmat-nfdi/nomad-distribution-template/jupyter:main
+docker pull ghcr.io/fairmat-nfdi/nomad-distro-template/jupyter:main
 ```
 
 If you want additional python packages to be available to all users in the jupyter hub you can add those to the jupyter table in the [`pyproject.toml`](pyproject.toml):
@@ -189,13 +198,30 @@ jupyter = [
 ]
 ```
 
+## Automated Unit and Example Upload Tests in CI
+
+By default, all unit tests from every plugin are executed to ensure system stability and catch potential issues early. These tests validate core functionality and help maintain consistency across different plugins.
+
+In addition to unit tests, the pipeline also verifies that all example uploads can be processed correctly. This ensures that any generated entries do not contain error messages, providing confidence that data flows through the system as expected.
+
+For example upload tests, the CI uses the image built in the Build Image step. It then runs the Docker container and starts up the application to confirm that it functions correctly. This approach ensures that if the pipeline passes, the app is more likely to run smoothly in a Dockerized environment on a server, not just locally.
+
+If you need to disable tests for specific plugins, update the **PLUGIN_TESTS_PLUGINS_TO_SKIP** variable in [.github/workflows/docker-publish.yml](./.github/workflows/docker-publish.yml#L19) by adding the plugin names to the existing list.
+
+## Set Up Regular Package Updates with Dependabot
+
+Dependabot is already configured in the repository’s CI setup, but you need to enable it manually in the repository settings.
+
+To enable Dependabot, go to Settings > Code security and analysis in your GitHub repository. From there, turn on Dependabot alerts and version updates. Once enabled, Dependabot will automatically check for dependency updates and create pull requests when new versions are available.
+
+This automated process helps ensure that your dependencies stay up to date, improving security and reducing the risk of vulnerabilities.
 
 ## Updating the distribution from the template
 
 In order to update an existing distribution with any potential changes in the template you can add a new `git remote` for the template and merge with that one while allowing for unrelated histories:
 
 ```
-git remote add template https://github.com/FAIRmat-NFDI/nomad-distribution-template
+git remote add template https://github.com/FAIRmat-NFDI/nomad-distro-template
 git fetch template
 git merge template/main --allow-unrelated-histories
 ```
@@ -207,7 +233,7 @@ git checkout --theirs Dockerfile
 git checkout --theirs .github/workflows/docker-publish.yml
 ```
 
-For detailed instructions on how to resolve the merge conflicts between different version we refer you to the latest template release [notes](https://github.com/FAIRmat-NFDI/nomad-distribution-template/releases/latest)
+For detailed instructions on how to resolve the merge conflicts between different version we refer you to the latest template release [notes](https://github.com/FAIRmat-NFDI/nomad-distro-template/releases/latest)
 
 Once the merge conflicts are resolved you should add the changes and commit them
 
@@ -220,7 +246,7 @@ Ideally all workflows should be triggered automatically but you might need to ru
 
 ## FAQ/Trouble shooting
 
-_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/FAIRmat-NFDI/nomad-distribution-template/manifests/main": unauthorized`
+_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/FAIRmat-NFDI/nomad-distro-template/manifests/main": unauthorized`
 _when trying to pull my docker image._
 
 Most likely you have not made the package public or provided a personal access token (PAT).
