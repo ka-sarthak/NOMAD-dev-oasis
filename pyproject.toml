@@ -33,9 +33,9 @@ repository = "https://github.com/FAIRmat-NFDI/nomad-distro-template"
 
 [project.optional-dependencies]
 plugins = [
-  "nomad-measurements",
-  "nomad-material-processing",
-  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@develop",
+  "nomad-measurements @ git+https://github.com/FAIRmat-NFDI/nomad-measurements.git@main",
+  # "nomad-material-processing",
+  "nomad-analysis @ git+https://github.com/FAIRmat-NFDI/nomad-analysis.git@70f1bdd9dcc98df0e9c405a5cc4e187a04992ade",
   # "bayesian-optimization-hpt @ git+https://github.com/ka-sarthak/bayesian-optimization-plugin.git@b4967b0df8bd7b955dafe5b4297866bd034159ee",
   # "nomad-ikz-plugin @git+https://github.com/IKZ-Berlin/nomad-ikz-plugin.git@a68ee7fe9f4ab1921a2d4ef8e3915ab8def1a4e4",
 ]
