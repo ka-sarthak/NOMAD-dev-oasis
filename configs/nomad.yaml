@@ -39,7 +39,7 @@ elastic:
   entries_index: nomad_oasis_entries_v1
   materials_index: nomad_oasis_materials_v1
 
-plugins:
+# plugins:
   # We only include our schema here. Without the explicit include, all plugins will be
   # loaded. Many build in plugins require more dependencies. Install nomad-lab[parsing]
   # to make all default plugins work.
@@ -84,5 +84,5 @@ plugins:
     # - 'rtg_sims:parser'
     # - 'schemas/RTGSIMS'
 
-  exclude:
-    - 'parsers/nexus'
+  # exclude:
+  #   - 'parsers/nexus'
