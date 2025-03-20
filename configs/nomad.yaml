@@ -43,19 +43,19 @@ plugins:
   # We only include our schema here. Without the explicit include, all plugins will be
   # loaded. Many build in plugins require more dependencies. Install nomad-lab[parsing]
   # to make all default plugins work.
-  include:
-    - "nomad_material_processing:schema"
-    - "nomad_material_processing.solution:schema"
-    - "nomad_material_processing.vapor_deposition.cvd:schema"
-    - "nomad_material_processing.vapor_deposition.pvd:schema"
-    - "nomad_material_processing.vapor_deposition.pvd:mbe_schema"
-    - "nomad_material_processing.vapor_deposition.pvd:pld_schema"
-    - "nomad_material_processing.vapor_deposition.pvd:sputtering_schema"
-    - "nomad_material_processing.vapor_deposition.pvd:thermal_schema"
-    - "nomad_measurements.general:schema"
-    - "nomad_measurements.xrd:parser"
-    - "nomad_analysis.general:schema"
-    - "nomad_analysis.jupyter:schema"
+  # include:
+  #   - "nomad_material_processing:schema"
+  #   - "nomad_material_processing.solution:schema"
+  #   - "nomad_material_processing.vapor_deposition.cvd:schema"
+  #   - "nomad_material_processing.vapor_deposition.pvd:schema"
+  #   - "nomad_material_processing.vapor_deposition.pvd:mbe_schema"
+  #   - "nomad_material_processing.vapor_deposition.pvd:pld_schema"
+  #   - "nomad_material_processing.vapor_deposition.pvd:sputtering_schema"
+  #   - "nomad_material_processing.vapor_deposition.pvd:thermal_schema"
+  #   - "nomad_measurements.general:schema"
+  #   - "nomad_measurements.xrd:parser"
+  #   - "nomad_analysis.general:schema"
+  #   - "nomad_analysis.jupyter:schema"
     # - "nomad_ikz_plugin.general:schema"
     # - "nomad_ikz_plugin.characterization:schema"
     # - "nomad_ikz_plugin.characterization:transmission_parser"
