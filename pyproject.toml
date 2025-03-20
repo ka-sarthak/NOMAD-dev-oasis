@@ -40,14 +40,14 @@ plugins = [
   # "nomad-ikz-plugin @git+https://github.com/IKZ-Berlin/nomad-ikz-plugin.git@a68ee7fe9f4ab1921a2d4ef8e3915ab8def1a4e4",
 ]
 jupyter = []
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.4"]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16dev"]
 
 [tool.uv]
 extra-index-url = [
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple",
 ]
 constraint-dependencies = ["hyperspy>=1.7.6"]
-prerelease = "disallow"
+prerelease = "allow"
 
 [tool.setuptools.packages.find]
 exclude = ["gui*", "docs*", "config*"]
