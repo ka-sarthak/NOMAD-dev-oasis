@@ -35,9 +35,11 @@ repository = "https://github.com/FAIRmat-NFDI/nomad-distro-template"
 [project.optional-dependencies]
 plugins = [
   "nomad-dtu-nanolab-plugin @ git+https://github.com/DTU-Nanolab-materials-discovery/nomad-dtu-nanolab-plugin.git",
-  "nomad-auto-xrd[analytics] @ git+https://github.com/FAIRmat-NFDI/nomad-auto-xrd.git@main"
+  "nomad-auto-xrd @ git+https://github.com/FAIRmat-NFDI/nomad-auto-xrd.git@main"
 ]
-jupyter = []
+jupyter = [
+  "nomad-auto-xrd[analytics] @ git+https://github.com/FAIRmat-NFDI/nomad-auto-xrd.git@main",
+]
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16dev"]
 
 [tool.uv]
