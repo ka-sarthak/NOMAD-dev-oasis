@@ -11,7 +11,7 @@ Click [here](https://github.com/new?template_name=nomad-distro-template&template
 to use this template, or click the `Use this template` button in the upper right corner of
 the main GitHub page for this template.
 
-> [!IMPORTANT]
+> [!CAUTION]
 > The templated repository will run a GitHub action on creation which might take a few minutes.
 > After the workflow finishes you should refresh the page and this message should disappear.
 > If this message persists you might need to trigger the workflow manually by navigating to the
@@ -155,7 +155,7 @@ systems docker gid. The user id 1000 is used as the nomad user inside all contai
 Please see the [Jupyter image](#the-jupyter-image) section below for more information on the jupyter NORTH image being generated in this repository.
 
 You can find more details on setting up and maintaining an Oasis in the NOMAD docs here:
-[nomad-lab.eu/prod/v1/docs/oasis/install.html](https://nomad-lab.eu/prod/v1/docs/oasis/install.html)
+[https://nomad-lab.eu/prod/v1/staging/docs/howto/oasis/configure.html](https://nomad-lab.eu/prod/v1/staging/docs/howto/oasis/configure.html)
 
 ### For an existing Oasis
 
